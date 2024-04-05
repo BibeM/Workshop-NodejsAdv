@@ -1,7 +1,6 @@
 {
   "name": "workshop-nodejsadv",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -18,5 +17,6 @@
     "mongoose": "^8.3.0",
     "nodemon": "^3.1.0",
     "validator": "^13.11.0"
-  }
+  },
+  "description": ""
 }
