@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "c14b927e-723b-4cae-b989-272fa2c079b0",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33557024"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Bob\",\r\n    \"lastName\":\"Green\",\r\n    \"age\":23 ,\r\n    \"email\":\"bobg@gmail.com\",\r\n    \"country\":\"Skopje\",\r\n    \"order\":[\r\n        \"661acecb33134f19ce067dbc\"\r\n    ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by Id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Jonny\",\r\n    \"lastName\":\"Green\",\r\n    \"age\":30 ,\r\n    \"email\":\"jane@gmail.com\",\r\n    \"country\":\"Macedonia\",\r\n    \"order\":[\r\n            ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/:id?firstName=Jonny",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						":id"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Jonny"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "661afcc86bc7e1d8f95cc41a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

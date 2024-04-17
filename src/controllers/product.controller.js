@@ -7,7 +7,7 @@ import { ProductService } from "../services/product.service.js";
 export class ProductController {
   static async getAllProducts(req, res) {
     try {
-      const products = await ProductService.getAllProducts();
+      const products = await ProductService.getAllProducts(req.query);
       res.json(products);
     } catch (error) {
       res.status(500).json({ msg: error.message });

@@ -1,8 +1,21 @@
 import { Product } from "../models/product.model.js";
 
 export class ProductService {
-  static async getAllProducts() {
-    const products = await Product.find();
+  static async getAllProducts(filters) {
+    const { sortBy, orderBy, ...basicFilters } = filters;
+    const sortFilters = {};
+    if (basicFilters.price)
+      basicFilters.price = { $gte: Number(basicFilters.price) };
+    if (sortBy === "price") {
+      if (orderBy === "asc") sortFilters.price = 1;
+      if (orderBy === "desc") sortFilters.price = -1;
+    }
+    if (basicFilters.rating)
+      basicFilters.rating = { $gte: Number(basicFilters.rating) };
+    if (basicFilters.stock)
+      basicFilters.stock = { $gte: Number(basicFilters.stock) };
+    const products = await Product.find(basicFilters).sort(sortFilters);
+
     return products;
   }
 

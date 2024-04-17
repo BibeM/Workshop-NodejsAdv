@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "7bf0aa75-390e-438a-a891-62096fc36abd",
+		"name": "Orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33557024"
+	},
+	"item": [
+		{
+			"name": "Get All Orders",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2024-03-09\",\r\n    \"user\":\"Risto\",\r\n    \"products\":[\"661057b5fe5dcf4e72137de9\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/orders/:id=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						":id="
+					],
+					"variable": [
+						{
+							"key": "id=",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
